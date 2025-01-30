@@ -1,0 +1,179 @@
+class BankAccount:
+    account_number: int = 0
+    balance: int = 0
+
+    def __init__(self, account_number, balance):
+        self.account_number = account_number
+        self.balance = balance
+
+    def check_balace(self):
+        check = self.balance
+        print(check)
+
+    def get_my_money(self):
+        get_money = int(input(f"Сколько денег желаите снять "))
+        if get_money < self.balance:
+            self.balance = self.balance - get_money
+        else:
+            print (f"На аккаунте {self.account_number} недостаточно средств")
+
+    def take_my_money(self):
+        take_money = int(input(f"Сколько денег желаите положить "))
+        self.balance = self.balance + take_money
+
+
+class Animal:
+    name: str = ""
+
+    def __init__(self, name):
+        self.name = name
+
+class Dog(Animal):
+    def speak(self):
+        print(f"{self.name} говорит Гав")
+
+class Cat(Animal):
+    def speak(self):
+        print(f"{self.name} говорит Мяу")
+
+
+
+class Gradebook:
+    student = []
+    marks = []
+
+    def __init__(self):
+        self.average = 0
+
+    def insert_student(self):
+        self.student.append(input("Введите имя студента "))
+
+    def insert_ball(self):
+        self.marks.append(int(input("Введите оценку ")))
+
+    def average_ball(self):
+        self.average = sum(self.marks) / len(self.marks)
+        print(f"Средний балл класса {self.average}")
+
+
+class User:
+    name: str = ""
+    email: str = ""
+    new_mail: str = ""
+
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+
+    def greet(self):
+        print(f"Приветствую тебя, {self.name} твой email {self.email}")
+
+    def change_email(self):
+        new_mail = input("Введите новый email ")
+        self.email = new_mail
+
+
+class Square:
+
+    side_length: int =1
+    def __init__(self, side_length):
+        self.side_length = side_length
+
+    def square_area(self):
+        self.area = self.side_length * self.side_length
+        print(self.area)
+
+    def perimeter_area(self):
+        self.perimeter = self.side_length*4
+        print(self.perimeter)
+
+    def change_lenght(self):
+        new_lenght = int(input("Введите на сколько нужно увеличить длину стороны "))
+        self.side_length = self.side_length + new_lenght
+
+
+class Student:
+    first_name: str = ""
+    last_name: str = ""
+    marks = []
+
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.average = 0
+
+    def insert_ball(self):
+        self.marks.append(int(input("Введите оценку ")))
+
+    def average_ball(self):
+        self.average = sum(self.marks) / len(self.marks)
+        print(self.average)
+
+    def get_info(self):
+        print(f"Студент: {self.first_name} {self.last_name} средний балл ", self.average)
+
+
+class Book:
+    title: str = ""
+    autor: str = ""
+    pages: int = 0
+
+    def __init__(self, title, autor, pages):
+        self.pages = pages
+        self.title = title
+        self.autor = autor
+
+    def read(self):
+        if self.pages != 0:
+            self.pages -= 1
+
+    def get_info(self):
+        print(f"Книга: {self.title} за авторством {self.autor} | {self.pages}")
+
+class Car:
+    make: str = ""
+    model: str = ""
+    year: int = 0
+    status: int = 0
+
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def start(self):
+        print("Едет")
+
+    def stop(self):
+        print("Стоит")
+
+    def get_discription(self):
+        print(f"Автомобиль: {self.make} модель {self.model} г/в {self.year}")
+
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def get_coordinates(self):
+        print(f"X= {self.x} Y= {self.y}")
+
+    def get_distance(self, point):
+        return self.x + point.x + self.y + point.y
+
+
+class Counter:
+    count: int = 0
+
+    def increment(self):
+        self.count += 1
+
+    def decrement(self):
+        self.count -= 1
+
+    def reset(self):
+        self.count = 0
+
+    def get_count(self):
+        print(f"Счетчик=: {self.count} ")
