@@ -1,0 +1,46 @@
+import os
+import datetime
+
+class NoteManager():
+    title: str = ""
+    content: str = ""
+
+    def create_note(self, title, content):
+        title = title + ".txt"
+        with open(title, 'w', encoding="utf-8") as f:
+            f.write(content)
+
+    def read_note(self, title):
+        title = title + ".txt"
+        with open(title, 'r', encoding="utf-8") as f:
+            content = f.read()
+            print(content)
+
+    def update_note(self, title, content):
+        title = title + ".txt"
+        with open(title, 'w', encoding="utf-8") as f:
+            f.write(content)
+
+    def delete_note(self, title):
+        title = title + ".txt"
+        os.remove(title)
+
+
+
+class ChangeLogger():
+    change: str = ""
+    def __init__(self,filename):
+        self.filename = filename
+
+    def log_change(self, change):
+        with open(self.filename, 'a', encoding="utf-8") as f:
+            f.write(change + '\n')
+
+    def read_log(self):
+        with open(self.filename, 'r', encoding="utf-8") as f:
+            log_read = f.read()
+            print(log_read)
+
+    def clear_log(self):
+        with open(self.filename, 'w', encoding="utf-8") as f:
+            f.write("")
