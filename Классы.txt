@@ -1,0 +1,429 @@
+Task 1 Done!
+class ShoppingCart:
+    def __init__(self):
+        self.product_list = []
+
+    def add_product(self, product):
+        self.product_list.append(product)
+
+    def remove_product(self, no_item):
+        self.product_list.pop(no_item)
+
+    def sum_product(self):
+        total_price = 0
+        for product in self.product_list:
+            total_price += product.price
+        return total_price
+
+    def show_cart(self):
+        print(self.product_list)
+
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def __repr__(self):
+        return f"{self.name} {self.price}"
+
+shop = ShoppingCart()
+shop.add_product(Product("Shose1", 150))
+shop.add_product(Product("Shose2", 250))
+shop.add_product(Product("Shose3", 350))
+shop.show_cart()
+shop.remove_product(0)
+print(shop.sum_product())
+print(shop.product_list)
+
+Task 2 Done!
+class Employee():
+    name: str = ""
+    position: str = ""
+    salary: int = 0
+    def __init__ (self, name, position, salary):
+        self.name = name
+        self.position = position
+        self.salary = salary
+
+    def more_salary(self):
+        self.salary = self.salary + 1000
+
+    def employee_info(self):
+        print (f"Имя сотрудника {self.name}, должность сотрудника {self.position}, зарплата сотрудника {self.salary}")
+
+employee = Employee("Иван", "Менеджер", 100000)
+employee.employee_info()
+employee.more_salary()
+employee.employee_info()
+
+Task 3 Done!
+
+class Movie():
+    title: str = ""
+    director: str = ""
+    duration: int = 0
+    def __init__ (self, title, director, duration):
+        self.title = title
+        self.director = director
+        self.duration = duration
+
+    def movie_info(self):
+        print (f"Название: {self.title} | Режиссер: {self.director} | Продолжительность: {self.duration} минут |")
+
+movie = Movie("Фильм", "Режиссер", 100)
+movie.movie_info()
+
+Task 4 Done!
+class GroceryList():
+
+    def __init__ (self):
+        self.list = []
+    def add_product(self, product):
+            self.list.append(product)
+    def del_product(self, product):
+            self.list.remove(product)
+    def list_info(self):
+        print(self.list)
+
+list = GroceryList()
+list.add_product("Apple")
+list.list_info()
+list.add_product("Orange")
+list.list_info()
+list.del_product("Apple")
+list.list_info()
+
+Task 5 Done!
+class Course():
+
+    def __init__ (self,name, teacher):
+        self.name = name
+        self.teacher = teacher
+        self.course_list = []
+
+    def add_student(self, student):
+            self.course_list.append(student)
+    def del_student(self, student):
+            self.course_list.remove(student)
+    def course_info(self):
+        print(f"Информация по курсу:\n"
+              f"Преподаватель: {self.teacher}\n"
+              f"Курс: {self.name}\n"
+              f"Студенты: {self.course_list} \n")
+
+
+
+course = Course("Math", "Ivanov.O.V.")
+course.add_student("Petrov")
+course.add_student("Sidorov")
+course.del_student("Petrov")
+course.course_info()
+
+Task 6 Done!
+class Weather():
+
+    def __init__ (self, temperature, humidity, condition):
+        self.temperature = temperature
+        self.humidity = humidity
+        self.condition = condition
+    def weather_info(self):
+        print (f"Температура: {self.temperature} | Влажность: {self.humidity} | Состояние: {self.condition} |")
+
+weather = Weather("30", "60", "Ясно")
+weather.weather_info()
+
+
+Task 7 ???
+class Restaurant:
+    menu = Menu()
+    order_list =[]
+    def create_order(self,food_list):
+        self.order_list.append(Order(food_list))
+
+    def show_orders(self):
+        for order in self.order_list:
+            print(order)
+
+class Menu:
+
+    def __init__(self):
+        self.food = []
+    def add_food(self, food):
+        self.food.append(food)
+    def add_food(self, food):
+        self.food.remove(food)
+    def menu_info(self):
+        print(self.food)
+
+class Order:
+    order_no = 1
+    def __init__(self, food_list=None):
+        self.order_no = Order.order_no
+        Order.order_no +=1
+        if food_list is not None:
+            self.food_list = food_list
+        else:
+            self.food_list = []
+
+    def __str__(self):
+        res_str = f"Order: {self.order_no} with:\n"
+        for food in self.food_list:
+            res_str+=food+"\n"
+        return res_str
+
+Task 8 Done!
+
+class Map:
+    country: str = ""
+    def __init__(self, country):
+        self.country = country
+        self.interests = []
+    def add_dot(self, name):
+        self.interests.append(name)
+    def find_dot(self):
+        interest = input("Введите точку интереса ")
+        if interest in self.interests:
+            print("Точка найдена")
+        else:
+            print("Точка не найдена")
+    def dots_info(self):
+        print(self.interests)
+
+map1 = Map("Russia")
+map1.add_dot('Moscow')
+map1.add_dot('Kirov')
+map1.dots_info()
+map1.find_dot()
+
+
+Task 9 Done!
+class BankClient():
+    name: str = ""
+    bill: str = ""
+    balance: int = 0
+    def __init__ (self, name, bill, balance):
+        self.name = name
+        self.bill = bill
+        self.balance = balance
+
+    def add_balance(self):
+        self.balance = self.balance + 1000
+
+    def rem_balance(self):
+        self.balance = self.balance - 1000
+
+    def client_info(self):
+        print(f"Клиент {self.name} счет {self.bill} баланс {self.balance}")
+
+
+Task 10 Done!
+
+class Event():
+
+    def __init__ (self, name, date, location):
+        self.name = name
+        self.date = date
+        self.location = location
+    def event_info(self):
+        print (f"Название события: {self.name} | Дата: {self.date} | Место: {self.location} |")
+
+event = Event("День рождения", "24 января", "HollyLand")
+event.event_info()
+
+
+Task 11 Done!
+import  math
+class QuadraticEquation:
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
+    def d(self):
+        return ((self.b)**2) - (4 * self.a * self.c)
+
+    def x1(self):
+        if self.d() < 0:
+            return None
+        else:
+            return (-self.b + math.sqrt(self.d())) / (2 * self.a)
+    def x2(self):
+        if self.d() < 0:
+            return None
+        else:
+            return (-self.b - math.sqrt(self.d())) / (2 * self.a)
+
+qequation = QuadraticEquation(1,10,3)
+print (qequation.x1())
+print (qequation.x2())
+
+
+Task 12 ??
+class RecipeBook:
+    def __init__(self):
+        self.recipe_list = []
+    def add_recipe(self, recipe):
+        self.recipe_list.append(recipe)
+    def remove_recipe(self, name):
+        for recipe in self.recipe_list:
+            if recipe.name() == name():
+                self.recipe_list.remove(recipe)
+                print(f"Рецепт '{recipe.name}' удален.")
+                break
+def find_recipe(self):
+    recipe_name = input("Введите название рецепта: ")
+    for recipe in self.recipe_list:
+        if recipe.name == recipe_name:
+            print("Рецепт найден:")
+            print(recipe)
+    print("Рецепт не найден.")
+
+    def show_recipe(self):
+        print("Список рецептов:")
+        for i, recipe in enumerate(self.recipe_list):
+                print(f"{i + 1}. {recipe}")
+class Recipe:
+    def __init__(self, name, text):
+        self.name = name
+        self.text = text
+
+    def __repr__(self):
+        return f"{self.name}: {self.text}"
+
+book = RecipeBook()
+
+recipe1 = Recipe("Борщ", "ывпвроапоыоы")
+recipe2 = Recipe("Омлет", "апоыаоыапоыапоаыпо")
+
+book.add_recipe(recipe1)
+book.add_recipe(recipe2)
+
+book.show_recipe()
+book.find_recipe()
+book.remove_recipe("Омлет")
+book.show_recipe()
+
+Task 13 Done!
+class Cat():
+    def __init__ (self, name, age):
+        self.name = name
+        self.age = age
+    def cat_info(self):
+        print (f"Имя: {self.name} | Возраст: {self.age} | ")
+
+cat = Cat("Кот", 12)
+cat.cat_info()
+
+Task 14 Done!
+
+class UserInterface:
+    def __init__(self):
+        pass
+    def get_user_input(self):
+        while True:
+            try:
+                user_input = int(input("Введите число (0 для выхода, 1 для ввода текста): "))
+                if user_input == 0:
+                    print("До свидания!")
+                    break
+                elif user_input == 1:
+                    text = input("Введите любой текст: ")
+                    print(f"Вы ввели: {text}")
+                else:
+                    print("Команда не распознана. Попробуйте снова.")
+            except ValueError:
+                print("Ошибка: введите число.")
+
+ui = UserInterface()
+ui.get_user_input()
+
+Task 15 Done!
+class Venicle():
+    def __init__ (self, make, model):
+        self.make = make
+        self.model = model
+
+class Car():
+    def __init__(self, body_type, engine_type):
+        self.body_type = body_type
+        self.engine_type = engine_type
+
+    def start_engine(self):
+        print(f"Двигатель автомобиля {self.make} {self.model} запущен.")
+
+    def display_info(self):
+        print(f"Тип кузова: {self.body_type}, Тип вигателя: {self.engine_type}")
+class Bike():
+    def __init__(self, type, color):
+        self.type = type
+        self.color = color
+    def steal(self):
+        print(f"Велосипед {self.type} {self.color} украден.")
+
+    def display_info(self):
+        print(f"Тип велосипеда: {self.type}, Цвет: {self.color}")
+
+Task 16 Done!
+class Ledger():
+    def __init__(self, balance):
+        self.balance = balance
+
+    def add_money(self, money):
+        self.money = money
+        self.balance = self.balance + self.money
+    def check_balance(self):
+        print(f"Bill = {self.balance}")
+    def take_money(self, money):
+        self.money = money
+        self.balance = self.balance - self.money
+ledger = Ledger(1000)
+ledger.check_balance()
+ledger.add_money(2000)
+ledger.check_balance()
+ledger.take_money(1500)
+ledger.check_balance()
+
+Task 17 Done!
+class Game():
+    def __init__ (self, name, genre, platform):
+        self.name = name
+        self.genre = genre
+        self.platform = platform
+    def game_info(self):
+        print (f"Название игры: {self.name} | Жанр: {self.genre} | Платформа: {self.platform}")
+
+game1 = Game("Doom2", "Shooter", "Xbox")
+game1.game_info()
+
+Task 18
+class Spaceship():
+    def __init__(self, name, speed, capacity):
+        self.name = name
+        self.speed = speed
+        self.capacity = capacity
+
+    def start_sheep(self):
+        print(f"Карабль {self.name} стартанул")
+
+    def stop_sheep(self):
+        print(f"Карабль {self.name} остановился")
+
+spsheep = Spaceship("Kirov1", 200, 1000)
+spsheep.start_sheep()
+spsheep.stop_sheep()
+
+Task 19 Done!
+class Email():
+    mail: str =""
+    sender: str = ""
+    recipient: str = ""
+
+    def __init__ (self, mail, sender, recipient):
+        self.mail = mail
+        self.sender = sender
+        self.recipient = recipient
+
+    def send_mail(self):
+        return f"Письмо отправлено к {self.sender}"
+
+    def show_info (self):
+        return f"Содержимое {self.mail}"
